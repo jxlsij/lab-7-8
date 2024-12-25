@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Всё о туризме в Финляндии: популярные места, советы путешественникам и уникальные достопримечательности.">
+  <meta name="keywords" content="Финляндия, туризм, путешествия, природа, культура">
+  <meta name="author" content="Мясоедов Олег">
+  <title>Туризм в Финляндии</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<script>
+  window.addEventListener("scroll", () => {
+    const intro = document.querySelector(".intro");
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > 50) {
+      intro.style.opacity = Math.max(1 - scrollPosition / 300, 0); 
+    }
+
+    if (scrollPosition > 300) {
+      intro.classList.add("hidden");
+    } else {
+      intro.classList.remove("hidden");
+    }
+
+    const video = document.querySelector("video");
+    const videoPosition = video.getBoundingClientRect();
+
+    if (videoPosition.top >= 0 && videoPosition.bottom <= window.innerHeight) {
+      video.play();  // Начать воспроизведение
+    } 
+    }
+  );
+</script>
+
+<body>
+<header class="top-header">
+  <div class="logo">
+    <i class="fas fa-mountain"></i> Туризм в Финляндии
+  </div>
+</header>
+
+<nav class="main-nav">
+  <ul class="menu">
+    <li><a href="#about">О Финляндии</a></li>
+    <li><a href="#places">Популярные места</a></li>
+    <li><a href="#tips">Советы</a></li>
+    <li><a href="#activities">Активности</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+</nav>
+
+
+  <main>
+    <section id="about" class="intro">
+      <h1>Откройте Финляндию</h1>
+      <p>Северное сияние, уютные города, бескрайние леса и озёра — Финляндия ждёт вас!</p>
+    </section>
+
+    <section class="video-section">
+      <div class="video-container">
+        <h2 class="header">Видеотур по Финляндии</h2>
+        <video controls>
+          <source src="video.mp4" type="video/mp4">
+          Ваш браузер не поддерживает воспроизведение видео.
+        </video>
+      </div>
+    </section>
+
+    <section id="places" class="cards-section">
+      <div class="card">
+        <img src="img/nature.jpg" width="300" alt="Природа Финляндии">
+        <h3>Природа</h3>
+        <p>Погрузитесь в атмосферу бескрайних лесов, чистейших озёр и арктической тундры.</p>
+      </div>
+      <div class="card">
+        <img src="img/city.jpg" width="300" alt="Культура Финляндии">
+        <h3>Культура</h3>
+        <p>Исследуйте старинные города и современные достопримечательности.</p>
+      </div>
+      <div class="card">
+        <img src="img/sauna.jpg" width="300" alt="Финская сауна">
+        <h3>Сауна</h3>
+        <p>Попробуйте финскую сауну — символ расслабления и здоровья.</p>
+      </div>
+    </section>
+
+    <section id="tips" class="tips">
+      <h2>Советы путешественникам</h2>
+      <ul>
+        <li>Захватите тёплую одежду для зимних приключений.</li>
+        <li>Попробуйте местные блюда, такие как рыба, ягодные десерты и хлеб с корицей.</li>
+        <li>Обязательно посетите Лапландию зимой, чтобы увидеть северное сияние.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Туризм в Финляндии. Все права защищены.</p>
+  </footer>
+</body>
+</html>
